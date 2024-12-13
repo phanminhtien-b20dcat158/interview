@@ -1,0 +1,27 @@
+.form-control option {
+    /* Style for all options */
+    font-size: 16px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.form-control option:hover {
+    /* Style for hovered options */
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.form-control option:selected {
+    /* Style for selected option */
+    background-color: #ccc;
+    color: #333;
+    font-weight: bold;
+}
+
+.form-control option:first-child {
+    /* Style for the first option (e.g. "Select Department") */
+    font-size: 14px;
+    color: #999;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

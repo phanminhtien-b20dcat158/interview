@@ -1,0 +1,289 @@
+#successMessage {
+    display: flex;
+    justify-content: center;
+    /* Căn giữa theo chiều ngang */
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+    height: 30px;
+    /* Chiều cao của phần tử */
+    border: 1px solid #000;
+    /* Đường viền để dễ nhìn */
+    font-weight: 700;
+    background-color: #0e3b56;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.search-box {
+    position: relative;
+    width: 50%;
+    /* Adjust width as needed */
+}
+
+.search-box input {
+    width: 100%;
+    padding-left: 2.5rem;
+    /* Make space for the icon */
+}
+
+.search-box .fa-search {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+.custom-select-arrow {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.custom-select-arrow select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    padding-right: 2rem;
+    /* Adjust padding to make space for the arrow */
+}
+
+.custom-select-arrow::after {
+    content: '▼';
+    /* Unicode for down arrow */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 12px;
+}
+
+.pagination-container {
+    position: fixed;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+
+
+    padding: 10px;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+thead {
+    background-color: #343a40;
+    color: white;
+}
+
+table,
+th,
+td {
+    border: none !important;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9 !important;
+    /* Màu nền cho dòng lẻ */
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #e9ecef !important;
+    /* Màu nền cho dòng chẵn */
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #c1b4b4 !important;
+    /* Màu nền cho các hàng chẵn */
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: rgba(210, 200, 141, 0.97) !important;
+    /* Màu nền cho các hàng lẻ */
+}
+
+.text-success {
+    color: #508C9B !important;
+}
+
+.text-warning {
+    color: #508C9B !important;
+}
+
+.text-danger {
+    color: #508C9B !important;
+}
+
+i.fas {
+    font-size: 1.2em;
+}
+
+th {
+    background-color: aqua;
+}
+
+/* CSS cho các tiêu đề của bảng */
+.table thead th {
+    background-color: #201E43 !important;
+    color: white;
+
+    font-weight: bold;
+    /* In đậm chữ */
+    padding: 10px;
+    /* Khoảng cách bên trong */
+}
+
+/* CSS cho các liên kết */
+.icon-link {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    /* Kích thước chữ */
+    color: #134B70;
+    /* Màu chữ */
+    text-decoration: none;
+    /* Loại bỏ gạch chân */
+    padding: 10px;
+    padding-top: 20px;
+    border-radius: 5px;
+    /* Bo tròn góc nếu cần */
+}
+
+/* CSS cho các biểu tượng */
+.icon-link i {
+    font-size: 24px;
+    /* Kích thước biểu tượng lớn hơn */
+    margin-right: 8px;
+    /* Khoảng cách giữa biểu tượng và văn bản */
+}
+
+/* Thay đổi màu khi di chuột qua liên kết */
+.icon-link:hover {
+    color: red;
+    /* Màu chữ khi di chuột qua */
+}
+
+/* search */
+/* CSS cho form */
+form {
+    display: flex;
+    align-items: center;
+}
+
+/* CSS cho input tìm kiếm */
+.search-box .form-control {
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* CSS cho select */
+.custom-select-arrow .form-control {
+    height: 3rem;
+    font-size: 12px;
+    border-radius: 12px;
+}
+
+/* CSS cho nút tìm kiếm */
+.btn-info {
+    border: 2px solid #134B70;
+    /* Bo viền nút */
+    border-radius: 5px;
+    /* Bo tròn góc nút */
+    padding: 0.5rem 1rem;
+    /* Khoảng cách bên trong nút */
+    font-size: 16px;
+    /* Kích thước chữ */
+    background-color: #ffffff;
+    /* Màu nền của nút */
+    color: #134B70;
+    /* Màu chữ của nút */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* CSS cho biểu tượng trong nút */
+.btn-info i {
+    font-size: 18px;
+    /* Kích thước biểu tượng */
+}
+
+/* Thay đổi màu khi di chuột qua nút */
+.btn-info:hover {
+    background-color: #134B70;
+    /* Màu nền khi di chuột qua */
+    color: #ffffff;
+    /* Màu chữ khi di chuột qua */
+    border-color: #134B70;
+    /* Màu viền khi di chuột qua */
+}
+
+/* phân trang */
+/* CSS cho phần phân trang */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    /* Căn giữa phân trang */
+    margin-top: 20px;
+    /* Khoảng cách phía trên phân trang */
+}
+
+.pagination {
+    display: flex;
+    list-style: none;
+    /* Loại bỏ dấu chấm và đánh số mặc định */
+    padding: 0;
+    margin: 0;
+}
+
+.pagination .page-item {
+
+    /* Bo viền cho các mục phân trang */
+    border-radius: 8px;
+    /* Bo tròn góc */
+    margin: 0 2px;
+    background-color: #508C9B !important;
+
+    /* Khoảng cách giữa các mục phân trang */
+}
+
+.job-list-title {
+    font-family: 'Times New Roman', Times, serif;
+    /* Font chữ */
+    font-size: 3.5rem;
+    /* Kích thước chữ */
+    color: black;
+    /* Màu chữ */
+    text-align: center;
+    /* Căn giữa tiêu đề */
+    margin-bottom: 20px;
+    /* Khoảng cách phía dưới tiêu đề */
+    text-shadow: 3px 3px 6px rgba(80, 140, 155, 0.2);
+    /* Hiệu ứng bóng chéo */
+}

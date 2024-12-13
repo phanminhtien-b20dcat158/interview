@@ -1,0 +1,17 @@
+.dataTables_wrapper .dataTables_length {
+    margin-left: 22px;
+    margin-bottom: 12px;
+}
+
+.dataTables_wrapper .dataTables_filter {
+    margin-right: 22px;
+    margin-bottom: 12px;
+}
+
+.icon + .icon {
+    margin-left: 26px !important;
+}
+
+.btn-width {
+    width: 108px;
+}

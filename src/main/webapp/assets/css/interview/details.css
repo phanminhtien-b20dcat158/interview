@@ -1,0 +1,45 @@
+*{
+    color: black;
+}
+.bs-grid-block {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+.card {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.btn-width {
+    width: 108px;
+}
+
+
+/* CSS tùy chỉnh để cải thiện giao diện */
+.info-group {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px; /* Tăng kích thước font */
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.info-label {
+    font-weight: bold;
+    width: 40%; /* Điều chỉnh kích thước nhãn */
+    text-align: left; /* Căn phải nhãn */
+    padding-right: 10px;
+}
+
+.info-content {
+    width: 100%; /* Điều chỉnh kích thước nội dung */
+    text-align: left; /* Căn trái nội dung */
+}

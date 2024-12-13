@@ -1,0 +1,116 @@
+body {
+    padding-top: 50px;
+}
+
+.job-list-title {
+    font-family: 'Times New Roman', Times, serif;
+    /* Font chữ */
+    font-size: 3.5rem;
+    /* Kích thước chữ */
+    color: black;
+    /* Màu chữ */
+    text-align: center;
+    /* Căn giữa tiêu đề */
+    margin-bottom: 20px;
+    /* Khoảng cách phía dưới tiêu đề */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    /* Hiệu ứng bóng chéo */
+}
+
+.breadcrumb {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: transparent;
+    /* Xóa màu nền của breadcrumb */
+    padding: 10px 15px;
+    /* Padding cho breadcrumb */
+    margin-bottom: 20px;
+    /* Khoảng cách dưới breadcrumb */
+    border-radius: 4px;
+    /* Bo góc của breadcrumb */
+    font-size: 20px;
+    /* Kích thước chữ của breadcrumb */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    /* Hiệu ứng bóng cho breadcrumb */
+    color: black;
+
+
+}
+
+/* Định dạng cho các item trong breadcrumb */
+.breadcrumb-item {
+    display: inline;
+    /* Hiển thị các item trong hàng ngang */
+    margin-right: 5px;
+    /* Khoảng cách giữa các item */
+
+}
+
+/* Định dạng cho liên kết trong breadcrumb */
+.breadcrumb-item a {
+    text-decoration: none;
+    /* Bỏ gạch dưới */
+    color: #007bff;
+    font-size: 16px;
+    /* Màu liên kết */
+    font-weight: bold;
+    /* Đậm chữ liên kết */
+}
+
+/* Định dạng cho item hiện tại trong breadcrumb */
+.breadcrumb-item.active {
+    color: #6c757d;
+    /* Màu chữ cho item hiện tại */
+    font-weight: normal;
+    /* Chữ không đậm */
+}
+
+/* Bo tròn các góc của các thẻ và nút */
+.card {
+    border-radius: 15px;
+    width: calc(100% - 2rem);
+    /* Chiều rộng mở rộng hơn một chút so với 100% */
+    height: auto;
+    /* Tự động mở rộng theo nội dung */
+    margin: 1rem auto;
+    /* Căn giữa thẻ và điều chỉnh khoảng cách trên/dưới */
+    font-size: 14px;
+}
+
+.back,
+.edit {
+    border-radius: 25px;
+    /* Điều chỉnh bo tròn của nút */
+    padding: 10px 20px;
+    /* Điều chỉnh padding của nút */
+    font-size: 16px;
+}
+
+/* Đổi màu nút */
+.back {
+    background-color: #134B70;
+    border: none;
+}
+
+.back:hover {
+    background-color: #0e3b56;
+}
+
+.btn-warning {
+    background-color: #508C9B;
+    border: none;
+}
+
+.btn-warning:hover {
+    background-color: #3e6f77;
+}
+
+/* Điều chỉnh kích thước của container */
+.container {
+    max-width: 1200px;
+    /* Điều chỉnh kích thước tối đa của container */
+}
+
+/* Điều chỉnh các nút trong .btn-container */
+.btn-container {
+    margin-top: 20px;
+}

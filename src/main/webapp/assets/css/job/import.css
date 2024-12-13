@@ -1,0 +1,29 @@
+body {
+    background-color: #e6ebf0;
+    padding-top: 150px;
+}
+
+.container {
+    max-width: 500px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.custom-file-label::after {
+    content: "Choose file";
+}
+
+#fileError {
+    display: none;
+}
+
+.btn {
+    border-radius: 8px;
+}
+
+.btn-secondary {
+
+    width: 100%;
+}
