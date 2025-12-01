@@ -1,93 +1,227 @@
-# mock_project
+# Interview Management System
 
+A comprehensive web-based Interview Management System built with Spring Boot, designed to streamline the recruitment process by managing candidates, interviews, job positions, and offers.
 
+## 📋 Table of Contents
 
-## Getting started
+- [Features](#features)
+- [Technology Stack](#technology-stack)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Database Setup](#database-setup)
+- [Running the Application](#running-the-application)
+- [Project Structure](#project-structure)
+- [API Documentation](#api-documentation)
+- [Security](#security)
+- [Contributing](#contributing)
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## ✨ Features
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+- **User Management**: Role-based access control with authentication and authorization
+- **Candidate Management**: Track and manage candidate information throughout the recruitment process
+- **Job Management**: Create and manage job positions
+- **Interview Scheduling**: Schedule and manage interviews with candidates
+- **Offer Management**: Generate and track job offers
+- **Email Notifications**: Automated email notifications for interview schedules and offers
+- **File Management**: Integration with Google Drive for document storage
+- **Excel Export**: Export data to Excel format for reporting
+- **Responsive UI**: JSP-based user interface with JSTL support
 
-## Add your files
+## 🛠 Technology Stack
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+### Backend
+- **Framework**: Spring Boot 3.3.2
+- **Java Version**: 17
+- **Build Tool**: Maven
+- **Database**: MySQL
+- **ORM**: Spring Data JPA
+- **Security**: Spring Security with JWT authentication
+- **Validation**: Spring Validation
+
+### Key Dependencies
+- **MapStruct**: Object mapping
+- **Lombok**: Reduce boilerplate code
+- **JWT**: JSON Web Token for authentication (jjwt 0.11.5, java-jwt 4.4.0)
+- **Apache POI**: Excel file generation
+- **Google Drive API**: File storage integration
+- **Spring Mail**: Email functionality
+- **Spring DevTools**: Development utilities
+
+### Frontend
+- **Template Engine**: JSP with JSTL
+- **Embedded Server**: Apache Tomcat
+
+## 📦 Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- **Java Development Kit (JDK) 17** or higher
+- **Maven 3.6+** (or use the included Maven wrapper)
+- **MySQL 8.0+**
+- **Git** (for version control)
+
+## 🚀 Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/phanminhtien-b20dcat158/interview.git
+   cd interview
+   ```
+
+2. **Verify Java and Maven installation**
+   ```bash
+   java -version
+   mvn -version
+   ```
+
+## ⚙️ Configuration
+
+1. **Create a `.env` file** in the project root directory with the following variables:
+   ```env
+   JWT_SECRET=your_jwt_secret_key_here
+   DB_USERNAME=your_database_username
+   DB_PASSWORD=your_database_password
+   ```
+
+2. **Configure application properties** (if needed)
+   
+   The application uses Spring Boot's default configuration. You can customize settings in `src/main/resources/application.properties` or `application.yml` if they exist.
+
+   Typical configurations include:
+   - Database connection URL
+   - Server port
+   - Email server settings
+   - Google Drive API credentials
+
+## 🗄️ Database Setup
+
+1. **Create MySQL database**
+   ```sql
+   CREATE DATABASE interview_management;
+   ```
+
+2. **Import initial data**
+   
+   The `sql` folder contains mock data for testing:
+   ```bash
+   mysql -u your_username -p interview_management < sql/mock_roles.sql
+   mysql -u your_username -p interview_management < sql/mock_users.sql
+   mysql -u your_username -p interview_management < sql/mock_candidates.sql
+   mysql -u your_username -p interview_management < sql/mock_jobs.sql
+   mysql -u your_username -p interview_management < sql/mock_interviews.sql
+   mysql -u your_username -p interview_management < sql/mock_scheduled_interviews.sql
+   mysql -u your_username -p interview_management < sql/mock_offers.sql
+   ```
+
+   Or import them in the order listed above to maintain referential integrity.
+
+## 🏃 Running the Application
+
+### Using Maven Wrapper (Recommended)
+
+**Windows:**
+```bash
+mvnw.cmd spring-boot:run
+```
+
+**Linux/Mac:**
+```bash
+./mvnw spring-boot:run
+```
+
+### Using Maven
+
+```bash
+mvn spring-boot:run
+```
+
+### Building and Running JAR
+
+1. **Build the project**
+   ```bash
+   mvn clean package
+   ```
+
+2. **Run the JAR file**
+   ```bash
+   java -jar target/interview_managerment-0.0.1-SNAPSHOT.jar
+   ```
+
+The application will start on the default port (usually 8080). Access it at:
+```
+http://localhost:8080
+```
+
+## 📁 Project Structure
 
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/hn24_cpl_java_01_g6/mock_project.git
-git branch -M main
-git push -uf origin main
+interview_managerment/
+├── src/
+│   ├── main/
+│   │   ├── java/org/mock/interview_managerment/
+│   │   │   ├── config/           # Configuration classes
+│   │   │   ├── controller/       # REST controllers
+│   │   │   ├── dto/              # Data Transfer Objects
+│   │   │   ├── entities/         # JPA entities
+│   │   │   ├── enums/            # Enumeration types
+│   │   │   ├── exception/        # Custom exceptions
+│   │   │   ├── mapper/           # MapStruct mappers
+│   │   │   ├── repository/       # JPA repositories
+│   │   │   ├── security/         # Security configuration
+│   │   │   ├── services/         # Business logic services
+│   │   │   ├── util/             # Utility classes
+│   │   │   ├── validator/        # Custom validators
+│   │   │   └── InterviewManagermentApplication.java
+│   │   ├── resources/            # Application resources
+│   │   └── webapp/               # JSP views and static files
+│   └── test/                     # Test classes
+├── sql/                          # Database scripts
+├── .env                          # Environment variables
+├── pom.xml                       # Maven configuration
+└── README.md                     # This file
 ```
 
-## Integrate with your tools
+## 📚 API Documentation
 
-- [ ] [Set up project integrations](https://gitlab.com/hn24_cpl_java_01_g6/mock_project/-/settings/integrations)
+The application provides RESTful APIs for:
 
-## Collaborate with your team
+- **Authentication**: Login, logout, token refresh
+- **Users**: CRUD operations for user management
+- **Candidates**: Manage candidate profiles
+- **Jobs**: Job position management
+- **Interviews**: Interview scheduling and management
+- **Offers**: Job offer generation and tracking
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+> **Note**: Detailed API documentation can be generated using Swagger/OpenAPI (if integrated) or refer to the controller classes in `src/main/java/org/mock/interview_managerment/controller/`
 
-## Test and Deploy
+## 🔒 Security
 
-Use the built-in continuous integration in GitLab.
+This application implements security features including:
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+- **JWT Authentication**: Secure token-based authentication
+- **Role-Based Access Control (RBAC)**: Different permissions for different user roles
+- **Password Encryption**: Secure password storage
+- **Spring Security**: Comprehensive security framework
 
-***
+### Default Roles
+The system supports multiple user roles (defined in `mock_roles.sql`). Check the SQL files for default users and their credentials.
 
-# Editing this README
+## 🤝 Contributing
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## Suggestions for a good README
+### Development Guidelines
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+- Follow Java coding conventions
+- Write unit tests for new features
+- Update documentation as needed
+- Ensure all tests pass before submitting PR
 
-## Name
-Choose a self-explaining name for your project.
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+---
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
